@@ -16,7 +16,7 @@ function scoreViewModel() {
     
     self.score = ko.computed(function() {
         return Number(self.numberOfAnimals()) + Number(self.numberOfDwarves()) + Number(self.numerOfVegetables()) + Number(self.furnishingsPasturesAndMines()) + Number(self.gold()) + Number(self.numberOfRubies()) + 
-            Number(self.pointsForParlorsStoragesChambers()) + Number(self.numberOfGrain() / 2) - Number(self.numberOfUnusedSpaces()) - Number(self.missingAnimalTypes() * 2) - Number(self.numberOfBeggingMarkers() * 3);
+            Number(self.pointsForParlorsStoragesChambers()) + Math.ceil(Number(self.numberOfGrain() / 2)* 10 / 10) - Number(self.numberOfUnusedSpaces()) - Number(self.missingAnimalTypes() * 2) - Number(self.numberOfBeggingMarkers() * 3);
     },this);
 }
 
