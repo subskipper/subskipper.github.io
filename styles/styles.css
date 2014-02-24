@@ -5,7 +5,12 @@
 .lineLabels {
     width: 250px;
     float: left;
-   
+    
+}
+
+.lineLabels p {
+    font-weight: bold;
+    font-style: italic;
 }
 
 .divLogo {
