@@ -9,11 +9,16 @@
         <div class="divLogo">
             Caverna Scorer
         </div>
+        <div class="mainDiv">
         <div class="contentDiv">
             <div class="lineLabels">
+                <div>
                 <p>Player Name:</p>
+                </div>
+                <div>
                 <p>Number of Animals:</p>
-                <p>Missing Animal types:</p>
+                </div>
+                    <p>Missing Animal types:</p>
                 <p>Grain:</p>
                 <p>Veggies:</p>
                 <p>Rubies:</p>
@@ -29,47 +34,24 @@
         <!-- ko foreach: columns -->
             <div class="scoreItem">
                      
-                    <input data-bind="value: Name" />
-                    <br />
-                    <input data-bind="value: numberOfAnimals">
-                    <br />
-                    
-                    <input data-bind="value: missingAnimalTypes" />
-                    <br />
-                    
-                    <input data-bind="value: numberOfGrain" />
-                    <br />
-                    
-                    <input data-bind="value: numerOfVegetables" />
-                    <br />
-                    
-                    <input data-bind="value: numberOfRubies" />
-                    <br />
-                    
-                    <input data-bind="value: numberOfDwarves" />
-                    <br />
-                    
-                    <input data-bind="value: numberOfUnusedSpaces" />
-                    <br />
-                    
-                    <input data-bind="value: furnishingsPasturesAndMines" />
-                    <br />
-                    
-                    <input data-bind="value: pointsForParlorsStoragesChambers" />
-                    <br />
-                    
-                    <input data-bind="value: gold" />
-                    <br />
-                    
-                    <input data-bind="value: numberOfBeggingMarkers" />
-                    <br />
-                    
-                    <input data-bind="value: score"/>
+                    <p><input data-bind="value: Name" /></p>
+                    <p><input data-bind="value: numberOfAnimals"></p>
+                    <p><input data-bind="value: missingAnimalTypes" /></p>
+                    <p><input data-bind="value: numberOfGrain" /></p>
+                    <p><input data-bind="value: numerOfVegetables" /></p>
+                    <p><input data-bind="value: numberOfRubies" /></p>
+                    <p><input data-bind="value: numberOfDwarves" /></p>
+                    <p><input data-bind="value: numberOfUnusedSpaces" /></p>
+                    <p><input data-bind="value: furnishingsPasturesAndMines" /></p>
+                    <p><input data-bind="value: pointsForParlorsStoragesChambers" /></p>
+                    <p><input data-bind="value: gold" /></p>
+                    <p><input data-bind="value: numberOfBeggingMarkers" /></p>
+                    <p><input data-bind="value: score"/></p>
                     <br />
             </div>
         <!-- /ko -->
         </div>
-        
+        </div>
         <script src="scripts/knockout-3.0.0.js" type="application/javascript"></script>
         <script src="scripts/viewModel.js" type="application/javascript"></script>
         
