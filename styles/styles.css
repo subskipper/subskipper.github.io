@@ -1,6 +1,5 @@
 .scoreItem {
     float:right;
-    vertical-align: middle;
 }
 
 .lineLabels {
@@ -11,12 +10,11 @@
 .lineLabels p {
     font-weight: bold;
     font-style: italic;
-    vertical-align: middle;
     height: 19px;
 }
 
 .divLogo {
-    font-family: Fantasy;
+    font-family: Geneva, Verdana,  sans-serif;
     font-size: 200%;
 }
 
@@ -44,4 +42,5 @@ body {
 
 .mainDiv {
     display: inline-block;
+    *display: inline-block;
 }
