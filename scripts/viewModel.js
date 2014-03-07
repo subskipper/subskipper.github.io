@@ -1,18 +1,22 @@
 function scoreViewModel() {
     var self = this;
     
-    self.Name = ko.observable('');
-    self.numberOfAnimals = ko.observable(0);
-    self.missingAnimalTypes = ko.observable(0);
-    self.numberOfGrain = ko.observable(0);
-    self.numerOfVegetables = ko.observable(0);
-    self.numberOfRubies = ko.observable(0);
-    self.numberOfDwarves = ko.observable(0);
-    self.numberOfUnusedSpaces = ko.observable(0);
-    self.furnishingsPasturesAndMines = ko.observable(0);
-    self.pointsForParlorsStoragesChambers = ko.observable(0);
-    self.gold = ko.observable(0);
-    self.numberOfBeggingMarkers = ko.observable(0);
+    self.Color = ko.observable('');
+    self.numberOfAnimals = ko.observable(null);
+    self.missingAnimalTypes = ko.observable(null);
+    self.numberOfGrain = ko.observable(null);
+    self.numerOfVegetables = ko.observable(null);
+    self.numberOfRubies = ko.observable(null);
+    self.numberOfDwarves = ko.observable(null);
+    self.numberOfUnusedSpaces = ko.observable(null);
+    self.furnishingsPasturesAndMines = ko.observable(null);
+    self.pointsForParlorsStoragesChambers = ko.observable(null);
+    self.gold = ko.observable(null);
+    self.numberOfBeggingMarkers = ko.observable(null);
+    
+    self.colorCSS = ko.computed(function() {
+        return 'color-' + self.Color().toLowerCase();    
+    });
     
     self.score = ko.computed(function() {
         return Number(self.numberOfAnimals()) + Number(self.numberOfDwarves()) + Number(self.numerOfVegetables()) + Number(self.furnishingsPasturesAndMines()) + Number(self.gold()) + Number(self.numberOfRubies()) + 

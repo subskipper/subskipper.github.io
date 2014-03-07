@@ -1,17 +1,18 @@
 <html>
 <head>
     <title>Caverna Scorer</title>   
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
     
     <body>
-        <div class="divLogo">
+        <h1 class="divLogo">
             Caverna Scorer
-        </div>
+        </h1>
         <div class="mainDiv">
         <div class="contentDiv">
-            <div class="lineLabels">
+            <!--<div class="lineLabels">
                 
                 <p>Player Name:</p>
                 <p>Number of Animals:</p>
@@ -26,27 +27,70 @@
                 <p>Gold:</p>
                 <p>Begging Markers:</p>
                 <p>SCORE:</p>
-            </div>
+            </div>-->
 
-        <!-- ko foreach: columns -->
-            <div class="scoreItem">
-                     
-                    <p><input data-bind="value: Name" /></p>
-                    <p><input data-bind="value: numberOfAnimals"></p>
-                    <p><input data-bind="value: missingAnimalTypes" /></p>
-                    <p><input data-bind="value: numberOfGrain" /></p>
-                    <p><input data-bind="value: numerOfVegetables" /></p>
-                    <p><input data-bind="value: numberOfRubies" /></p>
-                    <p><input data-bind="value: numberOfDwarves" /></p>
-                    <p><input data-bind="value: numberOfUnusedSpaces" /></p>
-                    <p><input data-bind="value: furnishingsPasturesAndMines" /></p>
-                    <p><input data-bind="value: pointsForParlorsStoragesChambers" /></p>
-                    <p><input data-bind="value: gold" /></p>
-                    <p><input data-bind="value: numberOfBeggingMarkers" /></p>
-                    <p><input data-bind="value: score"/></p>
-                    <br />
+            
+            <!-- ko foreach: columns -->
+            <div class="scoreItem" data-bind="css: colorCSS">
+
+                <div class="form-group">
+                    <select class="form-control" data-bind="value: Color">
+                        <option>Player color...</option>
+                        <option>Purple</option>
+                        <option>Green</option>
+                        <option>Blue</option>
+                        <option>Ocean</option>
+                        <option>Yellow</option>
+                        <option>Black</option>
+                        <option>Red</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: numberOfAnimals" placeholder="Number of animals" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: missingAnimalTypes" placeholder="Missing farm animal types" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: numberOfGrain" placeholder="Grain" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: numerOfVegetables" placeholder="Vegetables" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: numberOfRubies" placeholder="Rubies" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: numberOfDwarves" placeholder="Dwarves" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: numberOfUnusedSpaces" placeholder="Unused spaces" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: furnishingsPasturesAndMines" placeholder="Furnishings, Pastures, Mines (pts)" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: pointsForParlorsStoragesChambers" placeholder="Parlours, Storages, Chambers (pts)" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: gold" placeholder="Gold" />
+                </div>
+                <div class="form-group">
+                    <input type="number" class="form-control" data-bind="value: numberOfBeggingMarkers" placeholder="Begging markers" />
+                </div>
+                <h3>SCORE: <span data-bind="text: score"></span></h3>                        
+                                        
+                                                            
+                                                 
             </div>
-        <!-- /ko -->
+            <!-- /ko -->
+            
+            <h2 class="total-title">TOTAL SCORES</h2>
+            <ul class="totals">
+            <!-- ko foreach: columns -->
+                <li data-bind="visible: score() > 0, css: colorCSS"><h3 class="total-text" data-bind="text:score"></h3></li>
+            <!-- /ko -->
+            </ul>
         </div>
         </div>
         <script src="scripts/knockout-3.0.0.js" type="application/javascript"></script>
